@@ -1,4 +1,4 @@
-package pizza.models;
+package pizza.model;
 
 import java.util.ArrayList;
 
@@ -7,7 +7,7 @@ import com.google.maps.model.LatLng;
 public class Shop {
 	public String name;
 	public LatLng latlng;
-	public  ArrayList<LatLng> polygon = new ArrayList<>();
+	public  ArrayList<LatLng> polygon = new ArrayList<LatLng>();
 	
 	public Shop(LatLng latlng, String name) {
 		this.name = name;

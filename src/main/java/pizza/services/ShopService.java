@@ -6,20 +6,22 @@ import org.springframework.stereotype.Service;
 
 import com.google.maps.model.LatLng;
 
-import pizza.models.Shop;
+import pizza.model.Shop;
+
+
 
 @Service
 public class ShopService {
 
-	static private ArrayList<Shop> shopList= new ArrayList<>();
+	static private ArrayList<Shop> shopList= new ArrayList<Shop>();
 		
 	ShopService() {
 		System.out.println("-----Shop Service ---------");
-		ArrayList<LatLng> polygon = new ArrayList<>();
-		ArrayList<LatLng> polygon1 = new ArrayList<>();
-		ArrayList<LatLng> polygon2 = new ArrayList<>();
-		ArrayList<LatLng> polygon3 = new ArrayList<>();
-		ArrayList<LatLng> polygon4 = new ArrayList<>();
+		ArrayList<LatLng> polygon = new ArrayList<LatLng>();
+		ArrayList<LatLng> polygon1 = new ArrayList<LatLng>();
+		ArrayList<LatLng> polygon2 = new ArrayList<LatLng>();
+		ArrayList<LatLng> polygon3 = new ArrayList<LatLng>();
+		ArrayList<LatLng> polygon4 = new ArrayList<LatLng>();
 		
 		polygon.add(new LatLng(56.3245594, 43.820239));
 		polygon.add(new LatLng(56.3068925, 43.9495));
@@ -63,6 +65,6 @@ public class ShopService {
 	}
 	
 	public ArrayList<Shop> getShopList() {
-		return this.shopList;
+		return ShopService.shopList;
 	}
 }

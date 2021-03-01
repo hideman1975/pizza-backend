@@ -1,4 +1,4 @@
-package pizza.models;
+package pizza.model;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public OkHttpClient client = new OkHttpClient();
 	
 	JSONObject jsonObject;
 		
-	// Получить маршрут из стороннего сервиса
+	// РџРѕР»СѓС‡РёС‚СЊ РјР°СЂС€СЂСѓС‚ РёР· СЃС‚РѕСЂРѕРЅРЅРµРіРѕ СЃРµСЂРІРёСЃР°
 	
 	public  JSONArray createRoute(String start, String finish) throws IOException {
 	
@@ -66,7 +66,7 @@ public OkHttpClient client = new OkHttpClient();
 	return coordinates;
 }
 	
-	// Получить ближайшую пицирию
+	// РџРѕР»СѓС‡РёС‚СЊ Р±Р»РёР¶Р°Р№С€СѓСЋ РїРёС†РёСЂРёСЋ
 	
 	public  JSONArray getNearestPizzeria(String start) throws IOException {
 		Builder httpUrl = new HttpUrl.Builder()
@@ -100,7 +100,7 @@ public OkHttpClient client = new OkHttpClient();
 		return durations;
 	}
 	
-	//Извлекает из зашифрованного маршрута массив его точек
+	//Р�Р·РІР»РµРєР°РµС‚ РёР· Р·Р°С€РёС„СЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЂС€СЂСѓС‚Р° РјР°СЃСЃРёРІ РµРіРѕ С‚РѕС‡РµРє
 	
 	public static ArrayList<LatLng> decodePoly(String encoded) {
 	    ArrayList<LatLng> poly = new ArrayList<>();
@@ -135,12 +135,12 @@ public OkHttpClient client = new OkHttpClient();
 	    return poly;
 	}
 
-	// Дробит отрезок на участки по 5 метров
+	// Р”СЂРѕР±РёС‚ РѕС‚СЂРµР·РѕРє РЅР° СѓС‡Р°СЃС‚РєРё РїРѕ 5 РјРµС‚СЂРѕРІ
 	
 	public ArrayList<LatLng> getRoutePoints(LatLng start, LatLng end)  {
 	    
 		double distance = SphericalUtil.computeDistanceBetween(start, end);
-		double div = Math.floor(distance / 10); //на сколько участков нужно разбить отрезок
+		double div = Math.floor(distance / 10); //РЅР° СЃРєРѕР»СЊРєРѕ СѓС‡Р°СЃС‚РєРѕРІ РЅСѓР¶РЅРѕ СЂР°Р·Р±РёС‚СЊ РѕС‚СЂРµР·РѕРє
 	    double dX =  end.lat - start.lat;
 	    double dY =  end.lng - start.lng;
 	    double stepX = dX /div;
